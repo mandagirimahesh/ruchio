@@ -1,0 +1,17 @@
+#server:
+#  port: 8082   # Each microservice gets its own port
+
+spring:
+  application:
+    name: Order-Service
+  datasource:
+    url: jdbc:mysql://localhost:3306/ruchio_order?createDatabaseIfNotExist=true
+    username: root
+    password: root   # change to your MySQL password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # creates/updates tables automatically
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
