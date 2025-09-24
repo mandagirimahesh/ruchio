@@ -3,7 +3,7 @@ package com.ruchio.Order_Service.Service;
 import com.ruchio.Order_Service.Dto.OrderRequestDto;
 import com.ruchio.Order_Service.Dto.OrderResponseDto;
 
-public class OrderServiceImpl extends IOrderService{
+public class OrderServiceImpl implements IOrderService {
     @Override
     public OrderResponseDto placeOrder(OrderRequestDto orderRequestDto) {
         return null;
