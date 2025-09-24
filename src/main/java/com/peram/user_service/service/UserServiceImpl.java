@@ -41,8 +41,8 @@ public class UserServiceImpl implements UserService {
                 .email(request.email())
                 .password(request.password())
                 .build();
-
         User saved = userRepository.save(user);
+        log.info("new user added to database");
         return new UserResponse(saved.getId(), saved.getName(), saved.getEmail());
     }
 
