@@ -35,7 +35,6 @@ public class UserServiceImpl implements UserService {
         userRepository.findByEmail(request.email()).ifPresent(u -> {
             throw new IllegalArgumentException("Email already exists: " + request.email());
         });
-
         User user = User.builder()
                 .name(request.name())
                 .email(request.email())
@@ -103,5 +102,6 @@ public class UserServiceImpl implements UserService {
             throw new UserNotFoundException("User not found: " + id);
         }
         userRepository.deleteById(id);
+        log.warn("Deleted user with id: {}", id);
     }
 }
